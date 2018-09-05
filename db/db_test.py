@@ -16,5 +16,10 @@ def run_test():
     customer_obj = read_customer_from_db(customer_obj.id)
     print (customer_obj)
 
+    customer_obj.archived = True
+    customer_obj = write_customer_to_db(customer_obj)
+    print (customer_obj)
+
+
 if __name__ == '__main__':
     run_test()
