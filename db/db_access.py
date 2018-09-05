@@ -35,7 +35,7 @@ def read_from_db(client,object_type,object_id):
     if not object:
         return None
 
-    object.update({"id": object_id})
+    #object.update({"id": object_id})
 
     return object
 

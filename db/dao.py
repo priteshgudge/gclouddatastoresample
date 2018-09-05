@@ -5,10 +5,10 @@ from db.db_access import write_to_db,read_from_db,upsert_to_db,create_client
 datastore_client = create_client()
 
 def write_customer_to_db(customer: Customer) -> Customer:
-    customer_dict = customer.get_db_dict()
+
     if not customer.id:
         customer.id = str(uuid.uuid4())
-
+    customer_dict = customer.get_db_dict()
     upsert_to_db(
         datastore_client,
         Customer.db_identifier_type,
