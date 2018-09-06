@@ -1,6 +1,7 @@
 from google.cloud import datastore
+import os
 
-PROJECT_ID = "pocproject-215503"
+PROJECT_ID = os.getenv("GC_PROJECT_ID","pocproject-215503")
 
 def create_client(project_id=PROJECT_ID):
     return datastore.Client(project_id)
